@@ -1,9 +1,14 @@
-package tcpclient;
-import java.net.*;
-import java.io.*;
+package app.tcpclient;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
+
 
 public class TCPClient {
-  
+
 
     public static String askServer(String hostname, int port, String ToServer) throws IOException {
         Socket clientSocket = new Socket(hostname,port); // start connection to server
@@ -50,4 +55,3 @@ public class TCPClient {
         return serverResponse.toString();
     }
 }
-
